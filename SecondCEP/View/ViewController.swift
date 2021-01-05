@@ -9,12 +9,37 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var table: UITableView!
+    @IBOutlet var viewModel: ViewModel!
+    private let identifier:String = "AccountsCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.table.delegate = self
+        self.table.dataSource = self
+        
+        self.registerCell()
     }
-
-
+    
+    func registerCell() {
+        let customCell = UINib(nibName: identifier, bundle: nil)
+        self.table.register(customCell, forCellReuseIdentifier: identifier)
+    }
 }
 
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? AccountsCell {
+            
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    
+}

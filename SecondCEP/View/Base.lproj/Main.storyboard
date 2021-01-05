@@ -39,6 +39,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="table" destination="peC-9l-JE3" id="MHU-Bj-6Sg"/>
+                        <outlet property="viewModel" destination="sed-XB-BCE" id="uL8-OH-2yT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="sed-XB-BCE" customClass="ViewModel" customModule="SecondCEP" customModuleProvider="target"/>
