@@ -8,14 +8,11 @@
 
 import Foundation
 
-struct AccountsList {
-    let accountsList:[Account]
+struct AccountsList: Decodable {
+    let accountsList:[Account]?
 }
 
-struct Account {
-    let kind:String
-    let title:String
-    let number:String
-    let balance:Int
-    let currency:String
+struct Account: Decodable {
+    let kind, title, number, currency: String?
+    let balance: Double?
 }

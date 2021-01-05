@@ -17,6 +17,8 @@
 		D77512F425A4CEB4007FF1D1 /* Accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = D77512F325A4CEB4007FF1D1 /* Accounts.json */; };
 		D77512F925A4CF73007FF1D1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77512F825A4CF73007FF1D1 /* Model.swift */; };
 		D77512FB25A4D004007FF1D1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77512FA25A4D004007FF1D1 /* ViewModel.swift */; };
+		D77512FE25A4D4A9007FF1D1 /* AccountsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77512FC25A4D4A9007FF1D1 /* AccountsCell.swift */; };
+		D77512FF25A4D4A9007FF1D1 /* AccountsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77512FD25A4D4A9007FF1D1 /* AccountsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		D77512F325A4CEB4007FF1D1 /* Accounts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Accounts.json; sourceTree = "<group>"; };
 		D77512F825A4CF73007FF1D1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D77512FA25A4D004007FF1D1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		D77512FC25A4D4A9007FF1D1 /* AccountsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCell.swift; sourceTree = "<group>"; };
+		D77512FD25A4D4A9007FF1D1 /* AccountsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 			children = (
 				D77512D425A4CD4E007FF1D1 /* ViewController.swift */,
 				D77512D625A4CD4E007FF1D1 /* Main.storyboard */,
+				D77512FC25A4D4A9007FF1D1 /* AccountsCell.swift */,
+				D77512FD25A4D4A9007FF1D1 /* AccountsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D77512FF25A4D4A9007FF1D1 /* AccountsCell.xib in Resources */,
 				D77512DD25A4CD51007FF1D1 /* LaunchScreen.storyboard in Resources */,
 				D77512F425A4CEB4007FF1D1 /* Accounts.json in Resources */,
 				D77512DA25A4CD51007FF1D1 /* Assets.xcassets in Resources */,
@@ -243,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D77512FB25A4D004007FF1D1 /* ViewModel.swift in Sources */,
+				D77512FE25A4D4A9007FF1D1 /* AccountsCell.swift in Sources */,
 				D77512D525A4CD4E007FF1D1 /* ViewController.swift in Sources */,
 				D77512D125A4CD4E007FF1D1 /* AppDelegate.swift in Sources */,
 				D77512D325A4CD4E007FF1D1 /* SceneDelegate.swift in Sources */,
