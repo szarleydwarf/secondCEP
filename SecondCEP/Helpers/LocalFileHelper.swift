@@ -19,11 +19,11 @@ class LocalFileHelper {
         guard let url = Bundle.main.url(forResource: fileName, withExtension: fileExtension) else {return nil}
         guard let data = try? Data(contentsOf: url) else {return nil}
         
-        if let json = try? decoder.decode(Account.self, from: data) {
+        guard let json = try? decoder.decode(AccountsList.self, from: data) else { return nil}
             print("json \(json)")
-//            return json
-        }
+            return json
+//        }
         
-        return nil
+//        return nil
     }
 }

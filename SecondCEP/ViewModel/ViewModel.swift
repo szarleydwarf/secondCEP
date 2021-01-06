@@ -27,6 +27,7 @@ class ViewModel: NSObject {
     func fetchAccountsFromFile() {
         if let fileHelper = self.fileHelper {
             self.accountsList = fileHelper.fetch(from: fileName, with: fileExtension)
+            print("VM list> \(accountsList?.accounts)")
         }
     }
 }

@@ -9,10 +9,10 @@
 import Foundation
 
 struct AccountsList: Decodable {
-    let accountsList:[Account]?
+    let accounts:[Account]?
 }
 
 struct Account: Decodable {
-    let kind:String//, title, number, currency: String?
-//    let balance: Double?
+    let kind, title, number, currency: String?
+    let balance: Double?
 }
