@@ -15,59 +15,57 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="KGk-i7-Jjw" translatesAutoresizingMaskIntoConstraints="NO" id="H2p-sc-9uM" customClass="AccountsCell" customModule="SecondCEP" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="362" height="81"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XrI-an-mFA">
-                        <rect key="frame" x="5" y="10" width="352" height="66"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="202" translatesAutoresizingMaskIntoConstraints="NO" id="eFL-MW-veG">
-                                <rect key="frame" x="0.0" y="0.0" width="352" height="21.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" text="Name &amp; Kind" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNn-WF-gJc">
-                                        <rect key="frame" x="0.0" y="0.0" width="103" height="21.5"/>
-                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.65000000000000002" height="1"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" red="0.5" green="0.2653224032" blue="0.94349691899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" text="£ 0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFb-a2-IXF">
-                                        <rect key="frame" x="305" y="0.0" width="47" height="21.5"/>
-                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.34999999999999998" height="1"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="1"/>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFy-qc-Z0l">
-                                <rect key="frame" x="0.0" y="31.5" width="352" height="34.5"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEN-uR-R9t">
+                        <rect key="frame" x="0.0" y="0.0" width="362" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="362" id="qWE-Gh-aJd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title &amp; Kind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1m-uO-KN5">
+                        <rect key="frame" x="2" y="26" width="362" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="362" id="lPi-xS-w2y"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" red="0.5" green="0.2653224032" blue="0.94349691899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency &amp; Ballance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhT-rs-USH">
+                        <rect key="frame" x="0.0" y="54" width="362" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="362" id="AXs-ec-gHe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="XrI-an-mFA" secondAttribute="bottom" constant="5" id="Udj-hP-F7v"/>
-                    <constraint firstItem="XrI-an-mFA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ztf-IT-udb"/>
-                    <constraint firstItem="XrI-an-mFA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="jvU-bb-h16"/>
-                    <constraint firstAttribute="trailing" secondItem="XrI-an-mFA" secondAttribute="trailing" constant="5" id="ueh-nB-MdS"/>
+                    <constraint firstAttribute="trailing" secondItem="a1m-uO-KN5" secondAttribute="trailing" id="0Ba-s7-aDJ"/>
+                    <constraint firstAttribute="trailing" secondItem="JEN-uR-R9t" secondAttribute="trailing" constant="2" id="5u5-AW-aCs"/>
+                    <constraint firstAttribute="trailing" secondItem="GhT-rs-USH" secondAttribute="trailing" constant="2" id="L9d-0k-g24"/>
+                    <constraint firstItem="a1m-uO-KN5" firstAttribute="top" secondItem="JEN-uR-R9t" secondAttribute="bottom" constant="4" id="OOZ-iD-ULp"/>
+                    <constraint firstAttribute="bottom" secondItem="GhT-rs-USH" secondAttribute="bottom" constant="5" id="Quf-Nl-Qbm"/>
+                    <constraint firstItem="JEN-uR-R9t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dcq-NR-EIi"/>
+                    <constraint firstItem="JEN-uR-R9t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fA7-TM-BdN"/>
+                    <constraint firstItem="GhT-rs-USH" firstAttribute="top" secondItem="a1m-uO-KN5" secondAttribute="bottom" constant="4" id="hIS-Ky-wZi"/>
+                    <constraint firstItem="a1m-uO-KN5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="pXq-8n-R54"/>
                 </constraints>
             </tableViewCellContentView>
             <constraints>
-                <constraint firstItem="H2p-sc-9uM" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" id="Ldc-CO-3a6"/>
-                <constraint firstItem="H2p-sc-9uM" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" id="dt1-0H-CEW"/>
-                <constraint firstItem="H2p-sc-9uM" firstAttribute="trailing" secondItem="njF-e1-oar" secondAttribute="trailing" id="dzd-4P-F7w"/>
-                <constraint firstItem="H2p-sc-9uM" firstAttribute="bottom" secondItem="njF-e1-oar" secondAttribute="bottom" id="iQx-tn-UAi"/>
+                <constraint firstItem="H2p-sc-9uM" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="WCs-h0-YSo"/>
+                <constraint firstItem="H2p-sc-9uM" firstAttribute="centerX" secondItem="njF-e1-oar" secondAttribute="centerX" id="Wkr-FN-h2h"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="accountNumber" destination="AFy-qc-Z0l" id="Wow-5W-lYS"/>
-                <outlet property="currencyAndBalance" destination="sFb-a2-IXF" id="obw-5p-AtZ"/>
-                <outlet property="nameAndKind" destination="cNn-WF-gJc" id="ojW-Hn-8zz"/>
+                <outlet property="accountNumber" destination="JEN-uR-R9t" id="s1f-P9-6Qj"/>
+                <outlet property="currencyAndBalance" destination="GhT-rs-USH" id="lMr-2N-YLH"/>
+                <outlet property="titleAndKind" destination="a1m-uO-KN5" id="ohi-IE-Mw0"/>
             </connections>
-            <point key="canvasLocation" x="168.11594202898553" y="146.98660714285714"/>
+            <point key="canvasLocation" x="222" y="142"/>
         </tableViewCell>
     </objects>
 </document>

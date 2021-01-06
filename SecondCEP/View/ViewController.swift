@@ -44,7 +44,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func updateCell(_ cell: AccountsCell, with account: Account) {
-        cell.nameAndKind.text = account.title
+        cell.titleAndKind.text = account.title
         cell.currencyAndBalance.text = "\(account.balance)"
         cell.accountNumber.text = account.number
     }

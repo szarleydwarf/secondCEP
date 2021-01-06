@@ -17,6 +17,7 @@ class ViewModel: NSObject {
     override init() {
         super.init()
         self.fileHelper = LocalFileHelper()
+        
         self.fetchAccountsFromFile()
     }
     
@@ -27,7 +28,18 @@ class ViewModel: NSObject {
     func fetchAccountsFromFile() {
         if let fileHelper = self.fileHelper {
             self.accountsList = fileHelper.fetch(from: fileName, with: fileExtension)
-            print("VM list> \(accountsList?.accounts)")
         }
     }
+    
+    func currencySymbol(from currencyCode:String?) -> String {
+        if let currency = currencyCode {
+            let result = Locale.availableIdentifiers.map { Locale(identifier: $0) }.first { $0.currencyCode == currency }
+            if let symbol = result?.currencySymbol {
+                return symbol
+            }
+        }
+        return ""
+    }
+    
+    
 }
