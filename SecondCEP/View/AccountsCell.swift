@@ -10,5 +10,8 @@ import UIKit
 
 class AccountsCell: UITableViewCell {
 
-
+    @IBOutlet weak var nameAndKind: UILabel!
+    @IBOutlet weak var currencyAndBalance: UILabel!
+    @IBOutlet weak var accountNumber: UILabel!
+    
 }
