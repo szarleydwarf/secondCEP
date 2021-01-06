@@ -19,6 +19,7 @@
 		D77512FB25A4D004007FF1D1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77512FA25A4D004007FF1D1 /* ViewModel.swift */; };
 		D77512FE25A4D4A9007FF1D1 /* AccountsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77512FC25A4D4A9007FF1D1 /* AccountsCell.swift */; };
 		D77512FF25A4D4A9007FF1D1 /* AccountsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77512FD25A4D4A9007FF1D1 /* AccountsCell.xib */; };
+		D775130225A62F5A007FF1D1 /* LocalFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D775130125A62F5A007FF1D1 /* LocalFileHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		D77512FA25A4D004007FF1D1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D77512FC25A4D4A9007FF1D1 /* AccountsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCell.swift; sourceTree = "<group>"; };
 		D77512FD25A4D4A9007FF1D1 /* AccountsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsCell.xib; sourceTree = "<group>"; };
+		D775130125A62F5A007FF1D1 /* LocalFileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		D77512CF25A4CD4E007FF1D1 /* SecondCEP */ = {
 			isa = PBXGroup;
 			children = (
+				D775130025A62F34007FF1D1 /* Helpers */,
 				D77512F725A4CF32007FF1D1 /* ViewModel */,
 				D77512F625A4CF29007FF1D1 /* Model */,
 				D77512F525A4CEBD007FF1D1 /* View */,
@@ -144,6 +147,14 @@
 				D77512FA25A4D004007FF1D1 /* ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D775130025A62F34007FF1D1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D775130125A62F5A007FF1D1 /* LocalFileHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +262,7 @@
 			files = (
 				D77512FB25A4D004007FF1D1 /* ViewModel.swift in Sources */,
 				D77512FE25A4D4A9007FF1D1 /* AccountsCell.swift in Sources */,
+				D775130225A62F5A007FF1D1 /* LocalFileHelper.swift in Sources */,
 				D77512D525A4CD4E007FF1D1 /* ViewController.swift in Sources */,
 				D77512D125A4CD4E007FF1D1 /* AppDelegate.swift in Sources */,
 				D77512D325A4CD4E007FF1D1 /* SceneDelegate.swift in Sources */,

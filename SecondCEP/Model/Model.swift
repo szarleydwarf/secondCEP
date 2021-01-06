@@ -13,6 +13,6 @@ struct AccountsList: Decodable {
 }
 
 struct Account: Decodable {
-    let kind, title, number, currency: String?
-    let balance: Double?
+    let kind:String//, title, number, currency: String?
+//    let balance: Double?
 }
