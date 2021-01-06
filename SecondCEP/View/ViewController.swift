@@ -34,12 +34,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let accountsList = viewModel.accountsList?.accounts else {return UITableViewCell()}
         if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? AccountsCell {
-            
+            let model = accountsList[indexPath.row] as Account
+            updateCell(cell, with: model)
             return cell
         }
         return UITableViewCell()
     }
     
-    
+    func updateCell(_ cell: AccountsCell, with account: Account) {
+        cell.nameAndKind.text = account.title
+        cell.currencyAndBalance.text = "\(account.balance)"
+        cell.accountNumber.text = account.number
+    }
 }
