@@ -10,25 +10,71 @@ import XCTest
 @testable import SecondCEP
 
 class SecondCEPTests: XCTestCase {
-
+    var account:Account!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        account = Account(kind: "",title: "",number: "",currency: "",balance: 0.0)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        account = nil
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_Model_isNotNil () {
+        // Given new model
+        // When
+        let result = account
+        // Then is nil
+        XCTAssertNotNil(result)
+    }
+    
+    func test_NewModelKind_isEmpty() {
+        // Given new model
+        // When
+        let result = account.kind
+        // Then is nil
+        XCTAssert(result!.isEmpty)
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_NewModelTitle_isEmpty() {
+        // Given new model
+        // When
+        let result = account.title
+        // Then is nil
+        XCTAssert(result!.isEmpty)
+    }
+    
+    func test_NewModelNumber_isEmpty() {
+        // Given new model
+        // When
+        let result = account.number
+        // Then is nil
+        XCTAssert(result!.isEmpty)
+    }
+    
+    func test_NewModelcurrency_isEmpty() {
+        // Given new model
+        // When
+        let result = account.currency
+        // Then is nil
+        XCTAssert(result!.isEmpty)
+    }
+
+    func test_NewModelBalance_isZero() {
+        // Given new model
+        // When
+        let result = account.balance
+        // Then is nil
+        XCTAssertEqual(result, 0)
+    }
+
+    func test_ModelKind_isCurrent() {
+        // Given new model
+        account.kind = "current"
+        // When
+        let result = account.kind
+        // Then is nil
+        XCTAssertEqual(result, "current")
     }
 
 }

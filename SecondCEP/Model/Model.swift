@@ -9,6 +9,6 @@
 import Foundation
 
 struct Account: Decodable {
-    let kind, title, number, currency: String?
-    let balance: Double?
+    var kind, title, number, currency: String?
+    var balance: Double?
 }
