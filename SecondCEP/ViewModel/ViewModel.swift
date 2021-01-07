@@ -12,7 +12,7 @@ class ViewModel: NSObject {
     private let fileName = "Accounts"
     private let fileExtension = "json"
     private var fileHelper:LocalFileHelper?
-    var accountsList:AccountsList?
+    var accountsList:[Account]?
     
     override init() {
         super.init()
@@ -21,7 +21,7 @@ class ViewModel: NSObject {
         self.fetchAccountsFromFile()
     }
     
-    func getAccountsList() -> AccountsList? {
+    func getAccountsList() -> [Account]? {
         return accountsList
     }
     
@@ -40,6 +40,4 @@ class ViewModel: NSObject {
         }
         return ""
     }
-    
-    
 }

@@ -15,15 +15,12 @@ class LocalFileHelper {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
-    func fetch(from fileName:String, with fileExtension:String) -> AccountsList? {
+    func fetch(from fileName:String, with fileExtension:String) -> [Account]? {
         guard let url = Bundle.main.url(forResource: fileName, withExtension: fileExtension) else {return nil}
         guard let data = try? Data(contentsOf: url) else {return nil}
         
-        guard let json = try? decoder.decode(AccountsList.self, from: data) else { return nil}
-//            print("json \(json)")
+        guard let json = try? decoder.decode([Account].self, from: data) else { return nil}
+            print("json \(json)")
             return json
-//        }
-        
-//        return nil
     }
 }

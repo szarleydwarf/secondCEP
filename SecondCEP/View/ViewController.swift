@@ -30,11 +30,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.accountsList?.accounts?.count ?? 5
+        return self.viewModel.accountsList?.count ?? 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let accountsList = viewModel.accountsList?.accounts else {return UITableViewCell()}
+        guard let accountsList = viewModel.accountsList else {return UITableViewCell()}
         if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? AccountsCell {
             let model = accountsList[indexPath.row] as Account
             updateCell(cell, with: model)
