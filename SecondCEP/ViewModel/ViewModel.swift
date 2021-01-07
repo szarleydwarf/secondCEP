@@ -11,7 +11,7 @@ import Foundation
 class ViewModel: NSObject {
     private let fileName = "Accounts"
     private let fileExtension = "json"
-    private var fileHelper:LocalFileHelper?
+    private(set) var fileHelper:LocalFileHelper?
     private(set) var accountsList:[Account]?
     
     override init() {

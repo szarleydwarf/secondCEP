@@ -29,7 +29,7 @@ class ViewModelTest: XCTestCase {
         XCTAssertNotNil(result)
     }
     
-    func testNewVMAccountList_isNotNil() {
+    func test_NewVMAccountList_isNotNil() {
         // Given
         
         // When
@@ -38,5 +38,21 @@ class ViewModelTest: XCTestCase {
         XCTAssertNotNil(result)
     }
     
+    func test_NewVMFileManager_NotNil () {
+        // Given
+        
+        // When
+        let result = viewModel.fileHelper
+        // Then
+        XCTAssertNotNil(result)
+    }
     
+    func test_VMcurrencySymbol_notEmpty () {
+        // Given
+        
+        // When
+        let result = viewModel.currencySymbol(from: "USD")
+        // Then
+        XCTAssertEqual(result, "$")
+    }
 }
