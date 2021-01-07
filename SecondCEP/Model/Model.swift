@@ -8,10 +8,6 @@
 
 import Foundation
 
-struct AccountsList: Decodable {
-    let accounts:[Account]?
-}
-
 struct Account: Decodable {
     let kind, title, number, currency: String?
     let balance: Double?
