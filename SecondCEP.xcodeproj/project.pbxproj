@@ -20,6 +20,7 @@
 		D775130225A62F5A007FF1D1 /* LocalFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D775130125A62F5A007FF1D1 /* LocalFileHelper.swift */; };
 		D77AD62325A720940017B985 /* AccountsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77AD62125A720940017B985 /* AccountsCell.swift */; };
 		D77AD62425A720940017B985 /* AccountsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77AD62225A720940017B985 /* AccountsCell.xib */; };
+		D77AD62625A799A90017B985 /* ViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77AD62525A799A90017B985 /* ViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		D775130125A62F5A007FF1D1 /* LocalFileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileHelper.swift; sourceTree = "<group>"; };
 		D77AD62125A720940017B985 /* AccountsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCell.swift; sourceTree = "<group>"; };
 		D77AD62225A720940017B985 /* AccountsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsCell.xib; sourceTree = "<group>"; };
+		D77AD62525A799A90017B985 /* ViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				D77512E725A4CD52007FF1D1 /* SecondCEPTests.swift */,
 				D77512E925A4CD52007FF1D1 /* Info.plist */,
+				D77AD62525A799A90017B985 /* ViewModelTest.swift */,
 			);
 			path = SecondCEPTests;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D77AD62625A799A90017B985 /* ViewModelTest.swift in Sources */,
 				D77512E825A4CD52007FF1D1 /* SecondCEPTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
