@@ -36,4 +36,10 @@ class ViewModel: NSObject {
         }
         return ""
     }
+    
+    func prepareString(from listOfStrings:[String]) -> String {
+        var stringToReturn:String = ""
+        listOfStrings.forEach{stringToReturn.append(_: " \($0)")}
+        return stringToReturn
+    }
 }

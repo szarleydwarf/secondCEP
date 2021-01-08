@@ -65,12 +65,30 @@ class ViewModelTest: XCTestCase {
         XCTAssertEqual(result, "")
     }
     
-    
     func test_NewVM_UnwrapedAccountList_isNotEmpty () throws {
         // Given
         // When
         let result = try XCTUnwrap(viewModel.accountsList)
         // Then
         XCTAssertFalse(result.isEmpty)
+    }
+    
+    func test_VMStringPrepareFunc_returnNotEmptyString () {
+        // Given
+        let listOfStrings:[String] = ["hi", "ola", "hey"]
+        // When
+        let result = viewModel.prepareString(from: listOfStrings)
+        // Then
+        XCTAssertFalse(result.isEmpty)
+    }
+    
+    func test_VMStringPrepareFunc_returnEmptyString () {
+        // Given
+        let listOfStrings:[String] = []
+        // When
+        let result = viewModel.prepareString(from: listOfStrings)
+        print(result)
+        // Then
+        XCTAssertTrue(result.isEmpty)
     }
 }
