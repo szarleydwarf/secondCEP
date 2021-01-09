@@ -39,7 +39,7 @@ class LocalFileHelperTest: XCTestCase {
         XCTAssertNotNil(result)
     }
     
-    func test () {
+    func test_Jsondecoded_notNil () {
         // Given
         let fileName = "Accounts"
         let fileExtension = "json"
@@ -49,4 +49,5 @@ class LocalFileHelperTest: XCTestCase {
         // Then
         XCTAssertNotNil(result)
     }
+    
 }
