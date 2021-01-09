@@ -9,7 +9,7 @@
 import Foundation
 
 class LocalFileHelper {
-    private var decoder:JSONDecoder
+    private(set) var decoder:JSONDecoder
     init() {
         decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
