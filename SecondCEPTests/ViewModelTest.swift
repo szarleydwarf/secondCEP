@@ -65,6 +65,16 @@ class ViewModelTest: XCTestCase {
         XCTAssertFalse(result.isEmpty)
     }
     
+    func test_VMCurrencySymbolUSD_is$ () {
+        // given
+        let symbol = "£"
+        let code = "GBP"
+        // when
+        let result = viewModel.currencySymbol(from: code)
+        // then
+        XCTAssertEqual(result, symbol)
+    }
+    
     func test_NewVM_UnwrapedAccountList_isNotEmpty () throws {
         // Given
         // When
@@ -106,7 +116,6 @@ class ViewModelTest: XCTestCase {
         let balance = 10.00001
         // when
         let result = viewModel.formatBlance(from: balance)
-        print(result)
         // then
         XCTAssertEqual(result, " 10.00")
     }

@@ -31,7 +31,9 @@ class ViewModel: NSObject {
     
     func currencySymbol(from currencyCode:String?) -> String {
         guard let code = currencyCode else {return ""}
-        return code
+        let symbol = Locale.availableIdentifiers.map { Locale(identifier: $0) }.first { $0.currencyCode == code }
+        guard let currSymbol = symbol?.currencySymbol else {return code}
+        return currSymbol
     }
     
     func prepareString(from listOfStrings:[String?]) -> String {
