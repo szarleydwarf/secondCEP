@@ -92,5 +92,12 @@ class ViewModelTest: XCTestCase {
         XCTAssertTrue(result.isEmpty)
     }
     
-    
+    func test_VMFormatBalance_returnEmtyString () {
+        // given
+        
+        // when
+        let result = viewModel.formatBlance(from: 0.00)
+        // then
+        XCTAssertTrue(result.isEmpty)
+    }
 }

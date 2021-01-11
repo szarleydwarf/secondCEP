@@ -48,4 +48,9 @@ class ViewModel: NSObject {
         return stringToReturn
     }
     
+    func formatBlance(from balance:Double?) -> String {
+        
+        
+        return ""
+    }
 }
