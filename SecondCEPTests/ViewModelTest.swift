@@ -96,8 +96,18 @@ class ViewModelTest: XCTestCase {
         // given
         
         // when
-        let result = viewModel.formatBlance(from: 0.00)
+        let result = viewModel.formatBlance(from: nil)
         // then
         XCTAssertTrue(result.isEmpty)
+    }
+    
+    func test_VMFormatBalance_isTen () {
+        // given
+        let balance = 10.00001
+        // when
+        let result = viewModel.formatBlance(from: balance)
+        print(result)
+        // then
+        XCTAssertEqual(result, " 10.00")
     }
 }

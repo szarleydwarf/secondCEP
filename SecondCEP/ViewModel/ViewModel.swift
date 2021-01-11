@@ -49,8 +49,7 @@ class ViewModel: NSObject {
     }
     
     func formatBlance(from balance:Double?) -> String {
-        
-        
-        return ""
+        guard let balanceUnwraped = balance else {return ""}
+        return String(format: " %.2f", locale: Locale.current, balanceUnwraped)
     }
 }
