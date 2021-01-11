@@ -47,22 +47,22 @@ class ViewModelTest: XCTestCase {
         XCTAssertNotNil(result)
     }
     
-    func test_VMcurrencySymbol_notEmpty () {
-        // Given
-        
-        // When
-        let result = viewModel.currencySymbol(from: "USD")
-        // Then
-        XCTAssertEqual(result, "$")
-    }
-    
     func test_VMcurrencySymbol_isEmpty () {
         // Given
         
         // When
         let result = viewModel.currencySymbol(from: nil)
         // Then
-        XCTAssertEqual(result, "")
+        XCTAssertTrue(result.isEmpty)
+    }
+    
+    func test_VMcurrencySymbol_notEmpty () {
+        // Given
+        
+        // When
+        let result = viewModel.currencySymbol(from: "USD")
+        // Then
+        XCTAssertFalse(result.isEmpty)
     }
     
     func test_NewVM_UnwrapedAccountList_isNotEmpty () throws {
