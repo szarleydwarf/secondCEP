@@ -23,7 +23,9 @@ class ViewModel: NSObject {
     
     func fetchAccountsFromFile() {
         if let fileHelper = self.fileHelper {
-            self.accountsList = fileHelper.fetch(from: fileName, with: fileExtension)
+            if let accounts = fileHelper.fetch(from: fileName, with: fileExtension) {
+                self.accountsList = accounts.isEmpty ? [] : accounts
+            }
         }
     }
     
@@ -37,9 +39,13 @@ class ViewModel: NSObject {
         return ""
     }
     
-    func prepareString(from listOfStrings:[String]) -> String {
+    func prepareString(from listOfStrings:[String?]) -> String {
         var stringToReturn:String = ""
-        listOfStrings.forEach{stringToReturn.append(_: " \($0)")}
+        listOfStrings.forEach{
+            guard let stringToAppend = $0 else {return}
+            stringToReturn.append(_: " \(stringToAppend)")
+        }
         return stringToReturn
     }
+    
 }

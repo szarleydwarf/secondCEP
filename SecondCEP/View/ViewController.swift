@@ -30,7 +30,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.accountsList?.count ?? 5
+        return self.viewModel.accountsList?.count ?? 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,7 +44,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func updateCell(_ cell: AccountsCell, with account: Account) {
-        cell.titleAndKind.text = account.title
+        cell.titleAndKind.text = viewModel.prepareString(from: [account.title, account.kind])
         cell.currencyAndBalance.text = "\(account.balance)"
         cell.accountNumber.text = account.number
     }
