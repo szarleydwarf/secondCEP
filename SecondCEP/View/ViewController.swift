@@ -19,8 +19,8 @@ class ViewController: UIViewController {
         self.table.delegate = self
         self.table.dataSource = self
         
-        let lfh = LocalFileHelper()
-        viewModel = ViewModel(localFileHelper: lfh, file: "Accounts.json")
+//        let lfh =
+        viewModel = ViewModel(localFileHelper: LocalFileHelper(), file: "Accounts.json")
         
         self.registerCell()
     }

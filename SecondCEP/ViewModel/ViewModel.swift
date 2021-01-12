@@ -9,8 +9,8 @@
 import Foundation
 
 class ViewModel: NSObject {
-    private var fileName:String?// = "Accounts"
-    private var fileExtension:String?// = "json"
+    private(set) var fileName:String?// = "Accounts"
+    private(set) var fileExtension:String?// = "json"
     private(set) var fileHelper:LocalFileHelper?
     private(set) var accountsList:[Account]?
     
@@ -22,18 +22,18 @@ class ViewModel: NSObject {
         super.init()
         self.fileHelper = localFileHelper
         
-        self.setfileVariables(file: file)
+        self.setFileVariables(file: file)
         
         self.fetchAccountsFromFile()
     }
     
-    func setfileVariables(file:String) {
+    func setFileVariables(file:String) {
         let fileFullName = file.split(separator: ".")
-        self.fileName = String(fileFullName[0])
-        self.fileExtension = String(fileFullName[1])
-        
+        if !fileFullName.isEmpty {
+            self.fileName = String(fileFullName[0])
+            self.fileExtension = String(fileFullName[1])
+        }
     }
-    
     
     func fetchAccountsFromFile() {
         if let fileHelper = self.fileHelper, let name = fileName, let fExtension = fileExtension {

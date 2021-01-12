@@ -49,6 +49,22 @@ class ViewModelTest: XCTestCase {
         XCTAssertNotNil(result)
     }
     
+    func test_NewVMFileNameString_isNotEmpty () {
+        // given
+        // when
+        let result = viewModel.fileName!.isEmpty
+        // then
+        XCTAssertFalse(result)
+    }
+    
+    func test_NewVMFileExtensionString_isNotEmpty () {
+        // given
+        // when
+        let result = viewModel.fileExtension!.isEmpty
+        // then
+        XCTAssertFalse(result)
+    }
+    
     func test_VMcurrencySymbol_isEmpty () {
         // Given
         
@@ -99,7 +115,6 @@ class ViewModelTest: XCTestCase {
         let listOfStrings:[String] = []
         // When
         let result = viewModel.prepareString(from: listOfStrings)
-        print(result)
         // Then
         XCTAssertTrue(result.isEmpty)
     }
