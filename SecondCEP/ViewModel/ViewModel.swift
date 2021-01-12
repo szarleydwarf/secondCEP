@@ -7,23 +7,37 @@
 //
 
 import Foundation
-//listInTable
+
 class ViewModel: NSObject {
-    private let fileName = "Accounts"
-    private let fileExtension = "json"
+    private var fileName:String?// = "Accounts"
+    private var fileExtension:String?// = "json"
     private(set) var fileHelper:LocalFileHelper?
     private(set) var accountsList:[Account]?
     
     override init() {
         super.init()
-        self.fileHelper = LocalFileHelper()
+    }
+    
+    required init(localFileHelper:LocalFileHelper, file:String) {
+        super.init()
+        self.fileHelper = localFileHelper
+        
+        self.setfileVariables(file: file)
         
         self.fetchAccountsFromFile()
     }
     
+    func setfileVariables(file:String) {
+        let fileFullName = file.split(separator: ".")
+        self.fileName = String(fileFullName[0])
+        self.fileExtension = String(fileFullName[1])
+        
+    }
+    
+    
     func fetchAccountsFromFile() {
-        if let fileHelper = self.fileHelper {
-            if let accounts = fileHelper.fetch(from: fileName, with: fileExtension) {
+        if let fileHelper = self.fileHelper, let name = fileName, let fExtension = fileExtension {
+            if let accounts = fileHelper.fetch(from: name, with: fExtension) {
                 self.accountsList = accounts.isEmpty ? [] : accounts
             }
         }

@@ -13,7 +13,9 @@ class ViewModelTest: XCTestCase {
     var viewModel:ViewModel!
     
     override func setUp() {
-        viewModel = ViewModel()
+        let lfh = LocalFileHelper()
+        let name = "Accounts.json"
+        viewModel = ViewModel(localFileHelper: lfh, file: name)
     }
     
     override func tearDown() {
