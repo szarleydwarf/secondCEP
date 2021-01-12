@@ -35,15 +35,6 @@ class ViewModel: NSObject {
         }
     }
     
-    func setURL(from scheme:String, host:String, path:String) -> URL?{
-        var components = URLComponents()
-          components.scheme = scheme
-          components.host = host
-          components.path = path
-        guard let url = components.url else {return nil}
-        return url
-    }
-    
     func fetchAccountsFromFile() {
         if let fileHelper = self.fileHelper, let name = fileName, let fExtension = fileExtension {
             if let accounts = fileHelper.fetch(from: name, with: fExtension) {
