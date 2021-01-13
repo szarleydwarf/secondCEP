@@ -49,7 +49,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func updateCell(_ cell: AccountsCell, with account: Account) {
         cell.titleAndKind.text = viewModel.prepareString(from: [account.title, account.kind])
-        cell.currencyAndBalance.text = "\(account.balance)"
+        cell.currencyAndBalance.text = viewModel.prepareString(from: [viewModel.currencySymbol(from: account.currency), viewModel.formatBlance(from: account.balance)])//"\(account.balance)"
         cell.accountNumber.text = account.number
     }
 }
