@@ -10,9 +10,9 @@ import Foundation
 
 class LocalFileHelper {
     private(set) var decoder:JSONDecoder
-    init() {
-        decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+    init(decoder: JSONDecoder) {
+        self.decoder = decoder
+        self.decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
     func fetch(from fileName:String, with fileExtension:String) -> [Account]? {
