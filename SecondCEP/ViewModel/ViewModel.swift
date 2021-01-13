@@ -12,10 +12,18 @@ class ViewModel: NSObject {
     private(set) var fileName:String?// = "Accounts"
     private(set) var fileExtension:String?// = "json"
     private(set) var fileHelper:LocalFileHelper?
+    private(set) var apiHelper:RestApiHelper?
     private(set) var accountsList:[Account]?
     
     override init() {
         super.init()
+    }
+    
+    required init (apiHelper:RestApiHelper, file:String) {
+        super.init()
+        self.apiHelper = apiHelper
+        
+        self.fetchAccountsFromAPI()
     }
     
     required init(localFileHelper:LocalFileHelper, file:String) {
@@ -34,6 +42,14 @@ class ViewModel: NSObject {
             self.fileExtension = String(fileFullName[1])
         }
     }
+    
+    func fetchAccountsFromAPI() {
+        guard let url = apiHelper?.setURL(from: "https", host: "my-json-server.typicode.com", path: "/szarleydwarf/secondCEP/master/db/accounts") else {return}
+        apiHelper?.fetch(from: url) { done in
+            print("Done \(done)")
+        }
+    }
+    
     
     func fetchAccountsFromFile() {
         if let fileHelper = self.fileHelper, let name = fileName, let fExtension = fileExtension {

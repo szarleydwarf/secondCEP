@@ -14,7 +14,7 @@ class LocalFileHelperTest: XCTestCase {
     var lfh:LocalFileHelper!
     
     override func setUp() {
-        lfh = LocalFileHelper()
+        lfh = LocalFileHelper(decoder: JSONDecoder())
     }
     
     override func tearDown() {

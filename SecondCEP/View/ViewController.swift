@@ -20,7 +20,8 @@ class ViewController: UIViewController {
         self.table.dataSource = self
         
         let jsonDecoder = JSONDecoder()
-        viewModel = ViewModel(localFileHelper: LocalFileHelper(decoder: jsonDecoder), file: "Accounts.json")
+//        viewModel = ViewModel(localFileHelper: LocalFileHelper(decoder: jsonDecoder), file: "Accounts.json")
+        viewModel = ViewModel(apiHelper: RestApiHelper(decoder: jsonDecoder), file: "Accounts.json")
         
         self.registerCell()
     }

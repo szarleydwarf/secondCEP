@@ -13,7 +13,7 @@ class ViewModelTest: XCTestCase {
     var viewModel:ViewModel!
     
     override func setUp() {
-        let lfh = LocalFileHelper()
+        let lfh = LocalFileHelper(decoder: JSONDecoder())
         let name = "Accounts.json"
         viewModel = ViewModel(localFileHelper: lfh, file: name)
     }
