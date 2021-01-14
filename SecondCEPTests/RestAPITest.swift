@@ -7,16 +7,36 @@
 //
 
 import XCTest
+@testable import SecondCEP
 
 class RestAPITest: XCTestCase {
-    private var rapi = RestApiHelper!
+    private var rapi: RestApiHelper!
     
     override func setUp() {
-        self.rapi = RestApiHelper(decoder: JSONDecoder())
+        rapi = RestApiHelper(decoder: JSONDecoder())
     }
 
     override func tearDown() {
         rapi = nil
     }
+
+        func test_NewRAPIeHelper_NotNil () {
+          // Given
+          
+          // When
+          let result = rapi
+          // Then
+          XCTAssertNotNil(result)
+      }
+      
+      func test_NewRAPIH_JSDecoderNotNil () {
+          // Given
+          
+          // When
+          let result = rapi.decoder
+          // Then
+          XCTAssertNotNil(result)
+      }
+    
 
 }

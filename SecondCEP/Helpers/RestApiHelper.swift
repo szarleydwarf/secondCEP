@@ -11,6 +11,7 @@ import Foundation
 class RestApiHelper {
     private(set) var decoder:JSONDecoder
     var url:URL?
+    
     init(decoder: JSONDecoder) {
         self.decoder = decoder
         self.decoder.keyDecodingStrategy = .convertFromSnakeCase
