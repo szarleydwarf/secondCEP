@@ -32,7 +32,7 @@ class RestApiHelper {
 
     
     public func fetch(from url:URL?, completion:@escaping(Bool)->Void) {
-        
+        guard let url = url else {completion(false); return}
         
         
         DispatchQueue.main.async {
