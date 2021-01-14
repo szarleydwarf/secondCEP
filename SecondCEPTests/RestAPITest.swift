@@ -38,5 +38,22 @@ class RestAPITest: XCTestCase {
           XCTAssertNotNil(result)
       }
     
-
+    func test_RAH_URL_isNil () {
+        // given
+        
+        // when
+        let result = rapi.setURL(from: "", host: "", path: "")
+        // then
+        XCTAssertNil(result)
+    }
+    
+    func test_RAH_URL_isNotNil () {
+        // given
+        
+        // when
+        let result = rapi.setURL(from: "https", host: "my-json-server.typicode.com", path: "/szarleydwarf/secondCEP/master/db/accounts")
+        // then
+        XCTAssertNotNil(result)
+    }
+    
 }

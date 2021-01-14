@@ -18,7 +18,10 @@ class RestApiHelper {
     }
     
     
-    func setURL(from scheme:String, host:String, path:String) -> URL?{
+    func setURL(from scheme:String?, host:String?, path:String?) -> URL?{
+        guard let scheme = scheme, !scheme.isEmpty else {return nil}
+        guard let host = host, !host.isEmpty else {return nil}
+        guard let path = path, !path.isEmpty else {return nil}
         var components = URLComponents()
           components.scheme = scheme
           components.host = host
