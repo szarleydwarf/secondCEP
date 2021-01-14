@@ -10,6 +10,7 @@ import Foundation
 
 class RestApiHelper {
     private(set) var decoder:JSONDecoder
+    
     var url:URL?
     
     init(decoder: JSONDecoder) {
@@ -33,10 +34,20 @@ class RestApiHelper {
     
     public func fetch(from url:URL?, completion:@escaping(Bool)->Void) {
         guard let url = url else {completion(false); return}
-        
-        
-        DispatchQueue.main.async {
-            completion(true)
+        let session = URLSession.shared
+        let task = session.dataTask(with: url) { data, respons, error in
+            
+            if let dataToDecode = data {
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode([Account].self, from: dataToDecode) {
+                    print("JSON \(json)")
+                    DispatchQueue.main.async {
+                        completion(true)
+                    }
+                }
+            }
         }
+        
+        task.resume()
     }
 }
