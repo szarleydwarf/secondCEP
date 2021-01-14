@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D729A7C425B0C18700DA7582 /* RestAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729A7C325B0C18700DA7582 /* RestAPITest.swift */; };
 		D77512D125A4CD4E007FF1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77512D025A4CD4E007FF1D1 /* AppDelegate.swift */; };
 		D77512D325A4CD4E007FF1D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77512D225A4CD4E007FF1D1 /* SceneDelegate.swift */; };
 		D77512D525A4CD4E007FF1D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77512D425A4CD4E007FF1D1 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D729A7C325B0C18700DA7582 /* RestAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPITest.swift; sourceTree = "<group>"; };
 		D77512CD25A4CD4E007FF1D1 /* SecondCEP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondCEP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77512D025A4CD4E007FF1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D77512D225A4CD4E007FF1D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				D77512E725A4CD52007FF1D1 /* SecondCEPTests.swift */,
 				D77512E925A4CD52007FF1D1 /* Info.plist */,
 				D77AD62525A799A90017B985 /* ViewModelTest.swift */,
+				D729A7C325B0C18700DA7582 /* RestAPITest.swift */,
 			);
 			path = SecondCEPTests;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D729A7C425B0C18700DA7582 /* RestAPITest.swift in Sources */,
 				D77AD62625A799A90017B985 /* ViewModelTest.swift in Sources */,
 				D77512E825A4CD52007FF1D1 /* SecondCEPTests.swift in Sources */,
 				D776F8C725AA1341009A3D1F /* LocalFileHelperTest.swift in Sources */,
