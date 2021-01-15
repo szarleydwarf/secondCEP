@@ -18,7 +18,6 @@ class RestApiHelper {
         self.decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
-    
     func setURL(from scheme:String?, host:String?, path:String?) -> URL?{
         guard let scheme = scheme, !scheme.isEmpty else {return nil}
         guard let host = host, !host.isEmpty else {return nil}
@@ -31,20 +30,18 @@ class RestApiHelper {
         return url
     }
 
-    
     public func fetch(from url:URL?, completion:@escaping(Bool)->Void) {
         guard let url = url else {completion(false); return}
         let session = URLSession.shared
         let task = session.dataTask(with: url) { data, respons, error in
-            
-            if let dataToDecode = data {
+            guard let dataToDecode = data else {return}
                 let decoder = JSONDecoder()
                 if let json = try? decoder.decode([Account].self, from: dataToDecode) {
                     print("JSON \(json)")
                     DispatchQueue.main.async {
                         completion(true)
                     }
-                }
+                
             }
         }
         
