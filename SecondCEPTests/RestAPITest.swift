@@ -67,15 +67,13 @@ class RestAPITest: XCTestCase {
     
     func test_FetchNilURL_CompletionFalse () {
         // given
-        
-        // when
         rapi.fetch(from: nil) {completed, json in
             // then
             XCTAssertFalse(completed)
         }
     }
     
-    func test_FetchEmptyURL_CompletionTrue () {
+    func test_FetchEmptyURL_CompletionFalse () {
         // given
         let url = URL(string:"")
         //when
@@ -90,12 +88,17 @@ class RestAPITest: XCTestCase {
     func test_FetchURL_CompletionTrue () {
         // given
         let url = URL(string:  "https://my-json-server.typicode.com/szarleydwarf/secondCEP/master/db/accounts")
+        let expectation = self.expectation(description: "true")
         // when
         var result = false
         rapi.fetch(from: url) {completed, json in
             // then
+            print("1 \(completed) \(result)")
             result = completed
-            XCTAssertTrue(result)
+            print("2 \(completed) \(result)")
+            expectation.fulfill()
         }
+        waitForExpectations(timeout: 15)
+        XCTAssertTrue(result)
     }
 }
