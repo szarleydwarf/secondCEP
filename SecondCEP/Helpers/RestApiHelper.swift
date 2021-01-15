@@ -32,12 +32,10 @@ class RestApiHelper {
 
     public func fetch(from url:URL?, completion:@escaping(Bool, [Account])->Void) {
         guard let urlToUse = url else {return}
-        print("URL \n \(urlToUse.absoluteString)")
         let session = URLSession.shared
         let task = session.dataTask(with: urlToUse) { data, respons, error in
             guard let dataToDecode = data else {return}
             guard let json = try? self.decoder.decode([Account].self, from: dataToDecode) else {return}
-            print("JSON \(json)")
             DispatchQueue.main.async {
                 completion(true, json)
             }

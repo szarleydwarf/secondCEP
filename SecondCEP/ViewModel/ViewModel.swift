@@ -51,7 +51,6 @@ class ViewModel: NSObject {
                 self.accountsList = list
                 table.reloadData()
             }
-            print("Done \(done)")
         }
     }
     
