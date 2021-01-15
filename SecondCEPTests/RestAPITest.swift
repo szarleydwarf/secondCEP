@@ -69,7 +69,7 @@ class RestAPITest: XCTestCase {
         // given
         
         // when
-        rapi.fetch(from: nil) {completed in
+        rapi.fetch(from: nil) {completed, json in
             // then
             XCTAssertFalse(completed)
         }
@@ -80,7 +80,7 @@ class RestAPITest: XCTestCase {
         let url = URL(string:"")
         //when
         var result = false
-        rapi.fetch(from: url) {completed in
+        rapi.fetch(from: url) {completed, json in
             // then
             result = completed
             XCTAssertFalse(result)
@@ -92,7 +92,7 @@ class RestAPITest: XCTestCase {
         let url = URL(string:  "https://my-json-server.typicode.com/szarleydwarf/secondCEP/master/db/accounts")
         // when
         var result = false
-        rapi.fetch(from: url) {completed in
+        rapi.fetch(from: url) {completed, json in
             // then
             result = completed
             XCTAssertTrue(result)
