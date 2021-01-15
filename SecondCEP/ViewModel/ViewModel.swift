@@ -19,7 +19,7 @@ class ViewModel: NSObject {
         super.init()
     }
     
-    required init (apiHelper:RestApiHelper, file:String) {
+    required init (apiHelper:RestApiHelper) {
         super.init()
         self.apiHelper = apiHelper
         
