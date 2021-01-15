@@ -1,4 +1,5 @@
- [
+{
+ "accounts": [
     {
         "kind": "current",
         "title": "Current Account",
@@ -35,3 +36,4 @@
         "currency": "GBP"
     }
 ]
+}
