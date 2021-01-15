@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         
         let jsonDecoder = JSONDecoder()
 //        viewModel = ViewModel(localFileHelper: LocalFileHelper(decoder: jsonDecoder), file: "Accounts.json")
-        viewModel = ViewModel(apiHelper: RestApiHelper(decoder: jsonDecoder))
+        viewModel = ViewModel(apiHelper: RestApiHelper(decoder: jsonDecoder), table: self.table)
         
         self.registerCell()
     }
@@ -48,8 +48,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func updateCell(_ cell: AccountsCell, with account: Account) {
-//        cell.titleAndKind.text = viewModel.prepareString(from: [account.title, account.kind])
-//        cell.currencyAndBalance.text = viewModel.prepareString(from: [viewModel.currencySymbol(from: account.currency), viewModel.formatBlance(from: account.balance)])//"\(account.balance)"
-//        cell.accountNumber.text = account.number
+        cell.titleAndKind.text = viewModel.prepareString(from: [account.title, account.kind])
+        cell.currencyAndBalance.text = viewModel.prepareString(from: [viewModel.currencySymbol(from: account.currency), viewModel.formatBlance(from: account.balance)])//"\(account.balance)"
+        cell.accountNumber.text = account.number
     }
 }
