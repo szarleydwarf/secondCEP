@@ -30,7 +30,7 @@ class RestApiHelper {
         return url
     }
 
-    public func fetch(from url:URL?, completion:@escaping(Bool)->Void) {
+    public func fetch(from url:URL?, completion:@escaping(Bool, [Account])->Void) {
         guard let urlToUse = url else {return}
         print("URL \n \(urlToUse.absoluteString)")
         let session = URLSession.shared
@@ -39,7 +39,7 @@ class RestApiHelper {
             guard let json = try? self.decoder.decode([Account].self, from: dataToDecode) else {return}
             print("JSON \(json)")
             DispatchQueue.main.async {
-                completion(true)
+                completion(true, json)
             }
         }
         

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ViewModel: NSObject {
     private(set) var fileName:String?// = "Accounts"
@@ -19,11 +20,11 @@ class ViewModel: NSObject {
         super.init()
     }
     
-    required init (apiHelper:RestApiHelper) {
+    required init (apiHelper:RestApiHelper, table: UITableView) {
         super.init()
         self.apiHelper = apiHelper
         
-        self.fetchAccountsFromAPI()
+        self.fetchAccountsFromAPI(refreash:table)
     }
     
     required init(localFileHelper:LocalFileHelper, file:String) {
@@ -43,9 +44,13 @@ class ViewModel: NSObject {
         }
     }
     
-    func fetchAccountsFromAPI() {
+    func fetchAccountsFromAPI(refreash table: UITableView) {
         guard let url = apiHelper?.setURL(from: "https", host: "my-json-server.typicode.com", path: "/szarleydwarf/secondCEP/master/db/accounts") else {return}
-        apiHelper?.fetch(from: url) { done in
+        apiHelper?.fetch(from: url) { done, list in
+            if done {
+                self.accountsList = list
+                table.reloadData()
+            }
             print("Done \(done)")
         }
     }
