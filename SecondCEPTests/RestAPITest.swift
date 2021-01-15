@@ -73,16 +73,22 @@ class RestAPITest: XCTestCase {
         }
     }
     
+    
     func test_FetchEmptyURL_CompletionFalse () {
         // given
         let url = URL(string:"")
         //when
+        let expectation = self.expectation(description: "false")
         var result = false
         rapi.fetch(from: url) {completed, json in
             // then
+            print("1 \(completed) \(result)")
             result = completed
-            XCTAssertFalse(result)
+            print("2 \(completed) \(result)")
+            expectation.fulfill()
         }
+        waitForExpectations(timeout: 15)
+        XCTAssertFalse(result)
     }
     
     func test_FetchURL_CompletionTrue () {
@@ -93,9 +99,7 @@ class RestAPITest: XCTestCase {
         var result = false
         rapi.fetch(from: url) {completed, json in
             // then
-            print("1 \(completed) \(result)")
             result = completed
-            print("2 \(completed) \(result)")
             expectation.fulfill()
         }
         waitForExpectations(timeout: 15)

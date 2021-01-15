@@ -20,7 +20,7 @@ class LocalFileHelper {
         guard let data = try? Data(contentsOf: url) else {return nil}
         
         guard let json = try? decoder.decode([Account].self, from: data) else { return nil}
-            print("json \(json)")
+            print("local json \(json)")
             return json
     }
 }
