@@ -105,4 +105,9 @@ class RestAPITest: XCTestCase {
         waitForExpectations(timeout: 15)
         XCTAssertTrue(result)
     }
+    
+    func test_FetchURL_JSONNotNil () {
+        
+    }
+    
 }
