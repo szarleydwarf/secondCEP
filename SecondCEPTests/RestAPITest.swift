@@ -80,7 +80,7 @@ class RestAPITest: XCTestCase {
         //when
         let expectation = self.expectation(description: "false")
         var result = false
-        rapi.fetch(from: URL(string:"")) {completed, json in
+        rapi.fetch(from: url) {completed, json in
             // then
             print("1 \(completed) \(result)")
             result = completed
@@ -120,6 +120,4 @@ class RestAPITest: XCTestCase {
         waitForExpectations(timeout: 15)
         XCTAssertNotNil(result)
     }
-
-
 }
