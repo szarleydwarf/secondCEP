@@ -30,8 +30,8 @@ class RestApiHelper {
         return url
     }
 
-    public func fetch(from url:URL?, completion:@escaping(Bool, [Account])->Void) {
-        guard let urlToUse = url, urlToUse.absoluteString != "" else {return}
+    public func fetch(from p_url:URL?, completion:@escaping(Bool, [Account])->Void) {
+        guard let urlToUse = p_url, urlToUse.absoluteString != "" else {return}
         let session = URLSession.shared
         let task = session.dataTask(with: urlToUse) { data, respons, error in
             guard let dataToDecode = data else {return}

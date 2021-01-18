@@ -80,7 +80,7 @@ class RestAPITest: XCTestCase {
         //when
         let expectation = self.expectation(description: "false")
         var result = false
-        rapi.fetch(from: url) {completed, json in
+        rapi.fetch(from: URL(string:"")) {completed, json in
             // then
             print("1 \(completed) \(result)")
             result = completed
@@ -107,7 +107,19 @@ class RestAPITest: XCTestCase {
     }
     
     func test_FetchURL_JSONNotNil () {
-        
+        // given
+        let url = URL(string:  "https://my-json-server.typicode.com/szarleydwarf/secondCEP/master/db/accounts")
+        let expectation = self.expectation(description: "Not nil")
+        // when
+        var result:[Account]? = nil
+        rapi.fetch(from: url) {completed, json in
+            // then
+            result = json
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 15)
+        XCTAssertNotNil(result)
     }
-    
+
+
 }
